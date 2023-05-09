@@ -1,2 +1,0 @@
-export PYFILE=main.py
-
