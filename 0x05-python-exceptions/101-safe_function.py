@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
-def safe_print_integer_err(value):
+def safe_function(fct, *args):
     try:
-        print("[{:d}]".format(value))
-    except (ValueError, TypeError) as error:
+        r = fct(*args)
+        return r
+    except Exception as error:
         import sys
-        print("[Error] Exception: {}".format(error), file=sys.stderr)
-        return False
-    else:
-        return True
-
+        print("Exception: {}".format(error), file=sys.stderr)
+        return None
